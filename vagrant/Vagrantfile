@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'libvirt'
+
+Vagrant.configure("2") do |config|
+  (1..3).each do |i|
+    config.vm.define "#{i}" do |node|
+      node.vm.box = "generic/rocky9"
+    end
+  end
+end
